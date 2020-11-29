@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxConsecutiveOnes(bool arr[],int n)
+{
+    int res=0;
+    int curr;
+    
+    for(int i=0;i<n;i++)
+    {
+        if (arr[i]==0)
+        {
+            curr=0;
+        }
+        
+        else
+        {
+            curr++;
+            res=max(res,curr);
+        }
+        
+    }
+    
+    return res;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    bool arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    
+    cout<<maxConsecutiveOnes(arr,n)<<" ";
+    
+}
+
+
+/*Time Complexity: O(n)
+
+Aux Space: O(1)
+
+*/
