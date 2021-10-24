@@ -1,0 +1,59 @@
+ #include<iostream>
+#include<climits>
+#include<algorithm>
+using namespace std;
+//========================
+
+dutchNationalAlgo(int a[], int n){
+	int low  = 0 ; 
+	int mid = 0 ;
+	int high = n-1;
+	int temp;
+	while(mid<=high){
+		switch(a[mid]){
+			case 0:{
+				temp = a[low];
+				a[low] = a[mid];
+				a[mid] = temp;
+				low++;
+				mid++;
+				break;
+			}
+			case 1:{
+				mid++;
+				break;
+			}
+			case 2:{
+				temp = a[mid];
+				a[mid] = a[high];
+				a[high] = temp;
+				high--;
+				break;
+			}
+		}
+	}
+}
+
+//========================
+ 
+int main(){
+	
+//===========MAIN STARTS================
+
+cout<<"DPP's Notebook : Dutch National Flag Algorithm"<<endl;
+int n ; 
+cin>>n;
+int a[n];
+for(int i= 0; i<n ;i++){
+	cin>>a[i];
+}
+dutchNationalAlgo(a,n);
+for(int i= 0; i<n ;i++){
+	cout<<a[i]<<" ";
+}
+
+
+//===========MAIN ENDS=================
+	return 0;	
+}
+
